@@ -1,0 +1,5 @@
+(define (a-plus-abs-b a b) 
+  ((if (> b 0) + -) a b))
+
+;; got (a + |b|)
+;; we can get operator from procedure
