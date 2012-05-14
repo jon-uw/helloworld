@@ -1,11 +1,12 @@
 #!/bin/bash
 
+scriptname=`basename $0`
 tofind=$1
 # read by line
 IFS="
 "
 function show_processes() {
-  result=`ps -Ao pid,cmd | grep $tofind | grep -v grep`
+  result=`ps -Ao pid,cmd | grep $tofind | grep -v grep | grep -v $scriptname`
   for cmd in $result; do
     echo "    $cmd"
   done
