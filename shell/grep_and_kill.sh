@@ -2,7 +2,7 @@
 
 scriptname=`basename $0`
 tofind=$1
-# read by line
+# for read by line
 IFS="
 "
 function show_processes() {
@@ -26,8 +26,6 @@ else
   exit 0
 fi
 
-# read by line
-IFS=
 for cmd in $result; do
   echo 'will kill -->' $cmd
   #echo "pid: `echo $cmd | cut -d ' ' -f1`" 
